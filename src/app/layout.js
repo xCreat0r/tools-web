@@ -26,12 +26,20 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {adsenseClientId && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
+          <>
+            <Script
+              id="adsbygoogle-init"
+              strategy="beforeInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: "${adsenseClientId}",
+                    enable_page_level_ads: true
+                  });
+                `,
+              }}
+            />
+          </>
         )}
         {children}
       </body>
