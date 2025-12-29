@@ -6,6 +6,7 @@ import JsonFormatter from "@/components/tools/JsonFormatter";
 import Base64Tool from "@/components/tools/Base64Tool";
 import TimestampConverter from "@/components/tools/TimestampConverter";
 import UrlTool from "@/components/tools/UrlTool";
+import AdSense from "@/components/AdSense";
 
 export default function Home() {
   return (
@@ -20,6 +21,12 @@ export default function Home() {
             A collection of practical tools to help with your daily work
           </p>
         </div>
+
+        {/* AdSense - Top Banner */}
+        <AdSense 
+          adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP}
+          adFormat="horizontal"
+        />
 
         {/* Tools Tabs */}
         <Tabs defaultValue="calculator" className="w-full">
@@ -63,6 +70,12 @@ export default function Home() {
             </TabsContent>
           </div>
         </Tabs>
+
+        {/* AdSense - Bottom Banner */}
+        <AdSense 
+          adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM}
+          adFormat="horizontal"
+        />
 
         {/* Footer */}
         {/* <div className="text-center text-sm text-muted-foreground py-4">

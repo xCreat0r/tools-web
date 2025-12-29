@@ -2,6 +2,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Variables
+
+Copy `.env.local.example` to `.env.local` and fill in your Google AdSense credentials:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then edit `.env.local` with your AdSense Client ID and Ad Slot IDs:
+- `NEXT_PUBLIC_ADSENSE_CLIENT_ID`: Your AdSense publisher ID (format: `ca-pub-XXXXXXXXXXXXXXXX`)
+- `NEXT_PUBLIC_ADSENSE_SLOT_TOP`: Ad slot ID for the top banner ad
+- `NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM`: Ad slot ID for the bottom banner ad
+
+You can get these from your [Google AdSense account](https://www.google.com/adsense/).
+
+### Run the Development Server
+
 First, run the development server:
 
 ```bash
