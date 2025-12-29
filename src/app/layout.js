@@ -22,21 +22,31 @@ export default function RootLayout({children}) {
 
     return (
         <html lang="en">
-        <head>
-            <title>Toolbox</title>
-            {adsenseClientId && (
-                <>
-                    <script
-                        async
-                        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
-                        crossOrigin="anonymous"
-                    />
-                </>
-            )}
-        </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+        {adsenseClientId && (
+            <>
+                <Script
+                    id="adsbygoogle-init"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (adsbygoogle = window.adsbygoogle || []).push({
+                                google_ad_client: "${adsenseClientId}",
+                                enable_page_level_ads: true
+                            });
+                        `,
+                    }}
+                />
+                <Script
+                    async
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+                    crossOrigin="anonymous"
+                    strategy="afterInteractive"
+                />
+            </>
+        )}
         {children}
         </body>
         </html>

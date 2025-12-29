@@ -23,10 +23,12 @@ export default function Home() {
         </div>
 
         {/* AdSense - Top Banner */}
-        <AdSense 
-          adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP}
-          adFormat="horizontal"
-        />
+        {process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP && (
+          <AdSense 
+            adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP}
+            adFormat="horizontal"
+          />
+        )}
 
         {/* Tools Tabs */}
         <Tabs defaultValue="calculator" className="w-full">
@@ -72,10 +74,12 @@ export default function Home() {
         </Tabs>
 
         {/* AdSense - Bottom Banner */}
-        <AdSense 
-          adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM}
-          adFormat="horizontal"
-        />
+        {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM && (
+          <AdSense 
+            adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM}
+            adFormat="horizontal"
+          />
+        )}
 
         {/* Footer */}
         {/* <div className="text-center text-sm text-muted-foreground py-4">
