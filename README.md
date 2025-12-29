@@ -13,7 +13,8 @@ cp .env.local.example .env.local
 Then edit `.env.local` with your AdSense Client ID and Ad Slot IDs:
 - `NEXT_PUBLIC_ADSENSE_CLIENT_ID`: Your AdSense publisher ID (format: `ca-pub-XXXXXXXXXXXXXXXX`)
 - `NEXT_PUBLIC_ADSENSE_SLOT_TOP`: Ad slot ID for the top banner ad
-- `NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM`: Ad slot ID for the bottom banner ad
+- `NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_LEFT`: Ad slot ID for the bottom left ad
+- `NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_RIGHT`: Ad slot ID for the bottom right ad
 
 You can get these from your [Google AdSense account](https://www.google.com/adsense/).
 

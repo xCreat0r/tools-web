@@ -22,14 +22,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* AdSense - Top Banner */}
-        {process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP && (
-          <AdSense 
-            adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOP}
-            adFormat="horizontal"
-          />
-        )}
-
         {/* Tools Tabs */}
         <Tabs defaultValue="calculator" className="w-full">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto">
@@ -73,13 +65,21 @@ export default function Home() {
           </div>
         </Tabs>
 
-        {/* AdSense - Bottom Banner */}
-        {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM && (
-          <AdSense 
-            adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM}
-            adFormat="horizontal"
-          />
-        )}
+        {/* AdSense - Bottom Left and Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_LEFT && (
+            <AdSense 
+              adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_LEFT}
+              adFormat="rectangle"
+            />
+          )}
+          {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_RIGHT && (
+            <AdSense 
+              adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM_RIGHT}
+              adFormat="rectangle"
+            />
+          )}
+        </div>
 
         {/* Footer */}
         {/* <div className="text-center text-sm text-muted-foreground py-4">
