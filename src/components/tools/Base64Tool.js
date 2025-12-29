@@ -16,7 +16,7 @@ export default function Base64Tool() {
       setOutput(encoded);
       setError("");
     } catch (err) {
-      setError("编码失败: " + err.message);
+      setError("Encoding failed: " + err.message);
       setOutput("");
     }
   };
@@ -27,7 +27,7 @@ export default function Base64Tool() {
       setOutput(decoded);
       setError("");
     } catch (err) {
-      setError("解码失败，请确保输入是有效的 Base64 字符串");
+      setError("Decoding failed, please ensure the input is a valid Base64 string");
       setOutput("");
     }
   };
@@ -45,14 +45,14 @@ export default function Base64Tool() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Base64 编解码工具</CardTitle>
-        <CardDescription>Base64 编码和解码工具，支持中文</CardDescription>
+        <CardTitle>Base64 Encode/Decode Tool</CardTitle>
+        <CardDescription>Base64 encoding and decoding tool, supports Chinese characters</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label className="text-sm font-medium mb-2 block">输入内容</label>
+          <label className="text-sm font-medium mb-2 block">Input</label>
           <Textarea
-            placeholder="输入需要编码/解码的内容..."
+            placeholder="Enter content to encode/decode..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="min-h-[150px] font-mono text-sm"
@@ -60,11 +60,11 @@ export default function Base64Tool() {
         </div>
 
         <div className="flex gap-2 flex-wrap">
-          <Button onClick={encode}>Base64 编码</Button>
-          <Button onClick={decode} variant="secondary">Base64 解码</Button>
-          <Button onClick={clearAll} variant="outline">清空</Button>
+          <Button onClick={encode}>Base64 Encode</Button>
+          <Button onClick={decode} variant="secondary">Base64 Decode</Button>
+          <Button onClick={clearAll} variant="outline">Clear</Button>
           {output && (
-            <Button onClick={copyToClipboard} variant="outline">复制结果</Button>
+            <Button onClick={copyToClipboard} variant="outline">Copy Result</Button>
           )}
         </div>
 
@@ -76,7 +76,7 @@ export default function Base64Tool() {
 
         {output && (
           <div>
-            <label className="text-sm font-medium mb-2 block">输出结果</label>
+            <label className="text-sm font-medium mb-2 block">Output Result</label>
             <Textarea
               value={output}
               readOnly

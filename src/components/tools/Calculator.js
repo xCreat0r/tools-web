@@ -79,8 +79,8 @@ export default function Calculator() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>计算器</CardTitle>
-        <CardDescription>简单的四则运算计算器</CardDescription>
+        <CardTitle>Calculator</CardTitle>
+        <CardDescription>Simple four-function calculator</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="bg-muted p-4 rounded-lg text-right">
@@ -89,7 +89,7 @@ export default function Calculator() {
         
         <div className="grid gap-2">
           <Button variant="outline" className="w-full" onClick={clear}>
-            清除 (C)
+            Clear (C)
           </Button>
           
           {buttons.map((row, rowIndex) => (

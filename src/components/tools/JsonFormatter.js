@@ -17,7 +17,7 @@ export default function JsonFormatter() {
       setOutput(formatted);
       setError("");
     } catch (err) {
-      setError("JSON 格式错误: " + err.message);
+      setError("JSON format error: " + err.message);
       setOutput("");
     }
   };
@@ -29,7 +29,7 @@ export default function JsonFormatter() {
       setOutput(minified);
       setError("");
     } catch (err) {
-      setError("JSON 格式错误: " + err.message);
+      setError("JSON format error: " + err.message);
       setOutput("");
     }
   };
@@ -47,14 +47,14 @@ export default function JsonFormatter() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>JSON 格式化工具</CardTitle>
-        <CardDescription>格式化、压缩和验证 JSON 数据</CardDescription>
+        <CardTitle>JSON Formatter</CardTitle>
+        <CardDescription>Format, minify and validate JSON data</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label className="text-sm font-medium mb-2 block">输入 JSON</label>
+          <label className="text-sm font-medium mb-2 block">Input JSON</label>
           <Textarea
-            placeholder='{"name": "张三", "age": 18}'
+            placeholder='{"name": "John", "age": 18}'
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="min-h-[150px] font-mono text-sm"
@@ -62,11 +62,11 @@ export default function JsonFormatter() {
         </div>
 
         <div className="flex gap-2 flex-wrap">
-          <Button onClick={formatJson}>格式化</Button>
-          <Button onClick={minifyJson} variant="secondary">压缩</Button>
-          <Button onClick={clearAll} variant="outline">清空</Button>
+          <Button onClick={formatJson}>Format</Button>
+          <Button onClick={minifyJson} variant="secondary">Minify</Button>
+          <Button onClick={clearAll} variant="outline">Clear</Button>
           {output && (
-            <Button onClick={copyToClipboard} variant="outline">复制结果</Button>
+            <Button onClick={copyToClipboard} variant="outline">Copy Result</Button>
           )}
         </div>
 
@@ -78,7 +78,7 @@ export default function JsonFormatter() {
 
         {output && (
           <div>
-            <label className="text-sm font-medium mb-2 block">输出结果</label>
+            <label className="text-sm font-medium mb-2 block">Output Result</label>
             <Textarea
               value={output}
               readOnly

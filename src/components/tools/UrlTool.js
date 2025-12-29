@@ -16,7 +16,7 @@ export default function UrlTool() {
       setOutput(encoded);
       setError("");
     } catch (err) {
-      setError("编码失败: " + err.message);
+      setError("Encoding failed: " + err.message);
       setOutput("");
     }
   };
@@ -27,7 +27,7 @@ export default function UrlTool() {
       setOutput(decoded);
       setError("");
     } catch (err) {
-      setError("解码失败: " + err.message);
+      setError("Decoding failed: " + err.message);
       setOutput("");
     }
   };
@@ -45,14 +45,14 @@ export default function UrlTool() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>URL 编解码工具</CardTitle>
-        <CardDescription>URL 编码和解码工具，支持中文和特殊字符</CardDescription>
+        <CardTitle>URL Encode/Decode Tool</CardTitle>
+        <CardDescription>URL encoding and decoding tool, supports Chinese characters and special characters</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label className="text-sm font-medium mb-2 block">输入内容</label>
+          <label className="text-sm font-medium mb-2 block">Input</label>
           <Textarea
-            placeholder="例如: https://example.com/搜索?q=你好"
+            placeholder="Example: https://example.com/search?q=hello"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="min-h-[150px] font-mono text-sm"
@@ -60,11 +60,11 @@ export default function UrlTool() {
         </div>
 
         <div className="flex gap-2 flex-wrap">
-          <Button onClick={encodeUrl}>URL 编码</Button>
-          <Button onClick={decodeUrl} variant="secondary">URL 解码</Button>
-          <Button onClick={clearAll} variant="outline">清空</Button>
+          <Button onClick={encodeUrl}>URL Encode</Button>
+          <Button onClick={decodeUrl} variant="secondary">URL Decode</Button>
+          <Button onClick={clearAll} variant="outline">Clear</Button>
           {output && (
-            <Button onClick={copyToClipboard} variant="outline">复制结果</Button>
+            <Button onClick={copyToClipboard} variant="outline">Copy Result</Button>
           )}
         </div>
 
@@ -76,7 +76,7 @@ export default function UrlTool() {
 
         {output && (
           <div>
-            <label className="text-sm font-medium mb-2 block">输出结果</label>
+            <label className="text-sm font-medium mb-2 block">Output Result</label>
             <Textarea
               value={output}
               readOnly

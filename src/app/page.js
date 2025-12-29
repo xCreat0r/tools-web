@@ -11,21 +11,21 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted p-4 md:p-8">
       <div className="max-w-5xl mx-auto space-y-6">
-        {/* 页面标题 */}
+        {/* Page Title */}
         <div className="text-center space-y-4 py-6">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            工具箱
+            Toolbox
           </h1>
           <p className="text-muted-foreground">
-            实用的工具集合，助力你的日常工作
+            A collection of practical tools to help with your daily work
           </p>
         </div>
 
-        {/* 工具 Tabs */}
+        {/* Tools Tabs */}
         <Tabs defaultValue="calculator" className="w-full">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto">
             <TabsTrigger value="calculator" className="text-xs md:text-sm">
-              🔢 计算器
+              🔢 Calculator
             </TabsTrigger>
             <TabsTrigger value="json" className="text-xs md:text-sm">
               📋 JSON
@@ -34,7 +34,7 @@ export default function Home() {
               🔐 Base64
             </TabsTrigger>
             <TabsTrigger value="timestamp" className="text-xs md:text-sm">
-              ⏰ 时间戳
+              ⏰ Timestamp
             </TabsTrigger>
             <TabsTrigger value="url" className="text-xs md:text-sm">
               🔗 URL
@@ -64,11 +64,11 @@ export default function Home() {
           </div>
         </Tabs>
 
-        {/* 页脚 */}
+        {/* Footer */}
         {/* <div className="text-center text-sm text-muted-foreground py-4">
           <p>
-            使用 Next.js 15 + Turbopack + shadcn/ui 构建 | 
-            <span className="ml-2">专为后端开发者打造</span>
+            Built with Next.js 15 + Turbopack + shadcn/ui | 
+            <span className="ml-2">Designed for backend developers</span>
           </p>
         </div> */}
       </div>
