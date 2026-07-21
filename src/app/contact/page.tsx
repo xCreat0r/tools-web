@@ -20,8 +20,8 @@ export default function ContactPage() {
           <CardContent className="text-muted-foreground">
             <p>For general inquiries, bug reports, or feature requests, please email us at:</p>
             <p className="mt-2">
-              <a href="mailto:support@toolbox.example.com" className="text-primary underline font-medium">
-                support@toolbox.example.com
+              <a href="mailto:ljh6c6a68@gmail.com" className="text-primary underline font-medium">
+                ljh6c6a68@gmail.com
               </a>
             </p>
             <p className="mt-4 text-sm">We typically respond within 24-48 hours on business days.</p>
@@ -30,10 +30,31 @@ export default function ContactPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Feedback</CardTitle>
+            <CardTitle>Connect</CardTitle>
           </CardHeader>
-          <CardContent className="text-muted-foreground">
-            <p>Toolbox is continuously improving. If you have ideas for new tools you&apos;d like to see, or improvements to existing ones, let us know via email.</p>
+          <CardContent className="text-muted-foreground space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="font-medium w-16">X</span>
+              <a
+                href="https://x.com/xCreat0r"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline"
+              >
+                @xCreat0r
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-medium w-16">GitHub</span>
+              <a
+                href="https://github.com/xCreat0r"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline"
+              >
+                github.com/xCreat0r
+              </a>
+            </div>
           </CardContent>
         </Card>
 

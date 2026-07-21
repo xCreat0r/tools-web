@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="border-t bg-muted/30 mt-16">
-      <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h3 className="text-sm font-semibold mb-3">Toolbox</h3>
           <p className="text-sm text-muted-foreground">
@@ -29,6 +29,27 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-foreground transition-colors">About</Link></li>
             <li><Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
             <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold mb-3">Connect</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <a href="mailto:ljh6c6a68@gmail.com" className="hover:text-foreground transition-colors">
+                Email
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/xCreat0r" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/xCreat0r" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                GitHub
+              </a>
+            </li>
           </ul>
         </div>
       </div>
