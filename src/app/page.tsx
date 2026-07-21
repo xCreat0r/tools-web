@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, Braces, Link2, Clock, Binary } from "lucide-react";
+import AdSense from "@/components/AdSense";
 
 const tools = [
   {
@@ -75,6 +76,12 @@ export default function Home() {
           <p>No installation required. No account needed. Your data never leaves your browser.</p>
           <p>All tools are free and open to use for everyone.</p>
         </div>
+
+        {process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM && (
+          <div className="flex justify-center">
+            <AdSense adSlot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_BOTTOM} adFormat="horizontal" />
+          </div>
+        )}
       </div>
     </div>
   );
