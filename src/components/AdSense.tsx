@@ -26,6 +26,7 @@ export default function AdSense({
   const containerRef = useRef<HTMLDivElement>(null);
   const pushedRef = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [adStatus, setAdStatus] = useState<string | null>(null);
 
   useEffect(() => {
     if (!adSlot || !adClient) {
@@ -95,17 +96,51 @@ export default function AdSense({
     };
   }, [adSlot, adClient, isVisible]);
 
+  useEffect(() => {
+    if (!adRef.current) return;
+
+    const ins = adRef.current;
+
+    const checkStatus = () => {
+      const status = ins.getAttribute("data-ad-status");
+      if (status) setAdStatus(status);
+    };
+
+    checkStatus();
+
+    const observer = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.type === "attributes" && m.attributeName === "data-ad-status") {
+          checkStatus();
+        }
+      }
+    });
+
+    observer.observe(ins, { attributes: true, attributeFilter: ["data-ad-status"] });
+
+    const timeout = setTimeout(() => {
+      if (!ins.getAttribute("data-ad-status")) {
+        setAdStatus("unfilled");
+      }
+    }, 15000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeout);
+    };
+  }, []);
+
   const adsenseEnabled = process.env.NEXT_PUBLIC_ADSENSE_ENABLED === "true";
 
-  if (!adsenseEnabled || !adSlot || !adClient) {
-    return null;
-  }
+  if (!adsenseEnabled || !adSlot || !adClient) return null;
+
+  if (adStatus === "unfilled") return null;
 
   return (
     <div
       ref={containerRef}
       className="my-4 flex justify-center"
-      style={{ minWidth: "320px", minHeight: "100px" }}
+      style={adStatus === "filled" ? undefined : { minWidth: "320px", minHeight: "100px" }}
     >
       <ins
         ref={adRef}
