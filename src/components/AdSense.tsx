@@ -95,7 +95,9 @@ export default function AdSense({
     };
   }, [adSlot, adClient, isVisible]);
 
-  if (!adSlot || !adClient) {
+  const adsenseEnabled = process.env.NEXT_PUBLIC_ADSENSE_ENABLED === "true";
+
+  if (!adsenseEnabled || !adSlot || !adClient) {
     return null;
   }
 

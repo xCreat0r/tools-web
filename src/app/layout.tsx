@@ -45,6 +45,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const adsenseEnabled = process.env.NEXT_PUBLIC_ADSENSE_ENABLED === "true";
   const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   return (
@@ -52,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {adsenseClientId && (
+        {adsenseEnabled && adsenseClientId && (
           <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
